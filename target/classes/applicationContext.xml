@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+        <property name="jdbcUrl" value="sqlserver://suzeissql08:1433;databaseName=KDZHOU_DEV"/>
+        <property name="user" value="KDZHOU_DEV"/>
+        <property name="password" value="EXIGEN"/>
+        <property name="initialPoolSize" value="3"/>
+        <property name="maxPoolSize" value="10"/>
+        <property name="minPoolSize" value="1"/>
+        <property name="acquireIncrement" value="3"/>
+
+    </bean>
+    <!--JdbcTemplate Spring的JDBC模板-->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+   <!-- 配置事务管理器-->
+    <bean id="transctionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <!--开启事务注解-->
+    <!--<tx:annotation-driven transaction-manager="transctionManager"></tx:annotation-driven>-->
+    <!--配置事务增强-->
+   <!-- <tx:advice id="txadvice" transaction-manager="transctionManager">
+        <tx:attributes>
+            <tx:method name="account*" propagation="REQUIRED" isolation="DEFAULT" read-only="false" rollback-for="" timeout="-1"/>
+        </tx:attributes>
+    </tx:advice>-->
+    <!--配置切入点-->
+    <!--<aop:config>
+        <aop:pointcut id="pointcut1" expression="execution(* cn.kzhou.service.PolicyServicee.*(..))"></aop:pointcut>
+        <aop:advisor advice-ref="txadvice" pointcut-ref="pointcut1"></aop:advisor>
+    </aop:config>-->
+    <bean id="policyDao" class="cn.kzhou.dao.PolicyDao">
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+    </bean>
+
+    <bean id="policyService" class="cn.kzhou.service.PolicyService">
+        <property name="policyDao" ref="policyDao"></property>
+    </bean>
+</beans>

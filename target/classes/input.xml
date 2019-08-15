@@ -1,0 +1,24 @@
+<contacts>
+    <header>
+        <fileDate>2012-05-19</fileDate>
+    </header>
+    <contact>
+        <firstName>Joe</firstName>
+        <lastName>Johnson</lastName>
+        <street>123 Main St</street>
+        <city>Chicago</city>
+        <state>IL</state>
+        <zip>60610</zip>
+    </contact>
+    <contact>
+        <firstName>Jane</firstName>
+        <lastName>Smith</lastName>
+        <street/>
+        <city/>
+        <state/>
+        <zip/>
+    </contact>
+    <trailer>
+        <recordCount>2</recordCount>
+    </trailer>
+</contacts>
