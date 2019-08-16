@@ -1,0 +1,21 @@
+<beanio xmlns="http://www.beanio.org/2012/03"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+
+    <stream name="writeFile" format="delimited">
+        <record name="policyModel" class="cn.kzhou.model.PolicyModel">
+            <field name="no"/>
+            <field name="policyNumber"/>
+            <field name="effective"/>
+            <field name="expiration"/>
+            <field name="fees"/>
+        </record>
+    </stream>
+
+    <stream name="readFile" format="csv">
+        <record name="readModel" class="cn.kzhou.model.ReadModel">
+            <field name="ppointDate" type="date"/>
+            <field name="size"/>
+        </record>
+    </stream>
+</beanio>
