@@ -15,8 +15,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -50,49 +50,42 @@
       <artifactId>spring-context-support</artifactId>
       <version>4.3.6.RELEASE</version>
     </dependency>
-
     <!-- Spring的核心工具包。  -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
       <version>4.3.6.RELEASE</version>
     </dependency>
-
     <!-- Spring表达式语言. -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-expression</artifactId>
       <version>4.3.6.RELEASE</version>
     </dependency>
-
     <!-- 对JDBC 的简单封装  -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
       <version>4.3.6.RELEASE</version>
     </dependency>
-
     <!-- 为JDBC、Hibernate、JDO、JPA等提供的一致的声明式和编程式事务管理。 -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-tx</artifactId>
       <version>4.3.6.RELEASE</version>
     </dependency>
-
     <!-- 包含Web应用开发时，用到Spring框架时所需的核心类，包括自动载入WebApplicationContext特性的类、Struts与JSF集成类、文件上传的支持类、Filter类和大量工具辅助类。 -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
       <version>4.3.6.RELEASE</version>
     </dependency>
-
     <!-- 包含SpringMVC框架相关的所有类。包含国际化、标签、Theme、视图展现的FreeMarker、JasperReports、 Tiles、Velocity、XSLT相关类。当然，如果你的应用使用了独立的MVC框架，则无需这个JAR文件里的任何类。 -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
       <version>4.3.6.RELEASE</version>
     </dependency>
-
     <!-- 整合第三方的orm实现，如hibernate，ibatis，jdo以及spring 的jpa实现 -->
     <dependency>
       <groupId>org.springframework</groupId>
@@ -106,6 +99,7 @@
       <version>0.9.1.1</version>
     </dependency>
 
+    <!-- 以下是sqlserver需要的依赖-->
     <dependency>
       <groupId>com.microsoft.sqlserver</groupId>
       <artifactId>mssql-jdbc</artifactId>
@@ -117,12 +111,15 @@
       <version>4.11</version>
       <scope>compile</scope>
     </dependency>
+
+    <!-- 以下是beanIO需要的依赖-->
     <dependency>
       <groupId>org.beanio</groupId>
       <artifactId>beanio</artifactId>
       <version>2.0.1</version>
     </dependency>
 
+    <!-- 以下是camel需要的依赖-->
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-core</artifactId>
@@ -144,32 +141,42 @@
       <version>1.8.0-alpha2</version>
     </dependency>
 
-    <!--cxf-->
-    <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-frontend-jaxws</artifactId>
-      <version>2.6.2</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-transports-http</artifactId>
-      <version>2.6.2</version>
-    </dependency>
+    <!-- 以下是cxf框架发布restful风格的webservice需要的依赖-->
+    <!-- cxf-rs的坐标 -->
     <dependency>
       <groupId>org.apache.cxf</groupId>
       <artifactId>cxf-rt-frontend-jaxrs</artifactId>
-      <version>2.6.2</version>
+      <version>3.0.1</version>
+    </dependency>
+    <!-- cxf-rs客户端的坐标 -->
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-rs-client</artifactId>
+      <version>3.0.1</version>
+    </dependency>
+    <!-- 增强cxf-rs,可以处理json数据 -->
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-rs-extension-providers</artifactId>
+      <version>3.0.1</version>
+    </dependency>
+    <!-- 上面的依赖必须依赖此包 -->
+    <dependency>
+      <groupId>org.codehaus.jettison</groupId>
+      <artifactId>jettison</artifactId>
+      <version>1.3.7</version>
     </dependency>
 
+    <!-- Swagger需要的依赖 -->
     <dependency>
-      <groupId>org.codehaus.jackson</groupId>
-      <artifactId>jackson-mapper-asl</artifactId>
-      <version>1.9.11</version>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger2</artifactId>
+      <version>2.7.0</version>
     </dependency>
     <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>2.1.0</version>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger-ui</artifactId>
+      <version>2.7.0</version>
     </dependency>
   </dependencies>
 
