@@ -11,4 +11,17 @@
             <field name="hireDate" format="MMddyyyy" />
         </record>
     </stream>
+
+    <stream name="employeeFile1" format="delimited">
+        <record name="employee1" target="title">
+            <field name="title" type="string"></field>
+        </record>
+        <record name="employee2" class="example.Employee">
+            <field name="firstName" />
+            <field name="lastName" />
+            <field name="title" />
+            <field name="salary" />
+            <field name="hireDate" format="MMddyyyy" />
+        </record>
+    </stream>
 </beanio>

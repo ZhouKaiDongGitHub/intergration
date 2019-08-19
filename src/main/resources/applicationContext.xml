@@ -46,10 +46,11 @@
         <property name="policyDao" ref="policyDao"></property>
     </bean>
 
-    <mvc:annotation-driven/>
+    <!--<mvc:annotation-driven/>
     <mvc:default-servlet-handler/>
+    <context:component-scan base-package="cn.kzhou"/>-->
     <!--扫描器-->
-    <context:component-scan base-package="cn.kzhou"/>
+    <context:component-scan base-package="cn.kzhou.service"/>
 
     <!-- 注册服务提供者 -->
     <bean id="userServiceImpl" class="cn.kzhou.webservice.UserServiceImpl"></bean>

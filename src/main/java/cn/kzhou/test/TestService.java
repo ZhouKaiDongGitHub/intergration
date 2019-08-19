@@ -55,11 +55,12 @@ public class TestService {
         }
         // create a BeanWriter to write to "output.csv"
         BeanWriter out = factory.createWriter("writeFile", new File("D:\\WorkSpace_IDEA\\test\\src\\main\\resources\\output.txt"));
-
+        String string ="no    Effective    Expiration    Fees   PolicyNumber";
+        out.write("titleString",string);
         Iterator iterator = policyModels.iterator();
         while (iterator.hasNext()){
             PolicyModel policyModel = (PolicyModel)iterator.next();
-            out.write(policyModel);
+            out.write("policyModel",policyModel);
         }
         in.close();
         out.flush();

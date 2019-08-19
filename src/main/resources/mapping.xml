@@ -3,6 +3,9 @@
         xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
 
     <stream name="writeFile" format="delimited">
+        <record name="titleString" target="title">
+            <field name="title" type="string"></field>
+        </record>
         <record name="policyModel" class="cn.kzhou.model.PolicyModel">
             <field name="no"/>
             <field name="policyNumber"/>
