@@ -84,7 +84,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>4.3.6.RELEASE</version>
+      <version>5.2.20.RELEASE</version>
     </dependency>
     <!-- 整合第三方的orm实现，如hibernate，ibatis，jdo以及spring 的jpa实现 -->
     <dependency>
